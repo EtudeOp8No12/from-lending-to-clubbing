@@ -21,11 +21,11 @@ In this project, I applied LightGBM and used Bayesian Optimization to tune hyper
 
 |  | precision | recall | f1-score | support |
 | ------ | ------ | ------ | ------ | ------ |
-| 0.0 | 0.89 | 0.82 | 0.85 | 50035 |
-| 1.0 | 0.32 | 0.47 | 0.38 | 9148 |
-| accuracy |  |  | 0.76 | 59183 |
-| macro avg | 0.61 | 0.64 | 0.62 | 59183 |
-| weighted avg | 0.80 | 0.76 | 0.78 | 59183 |
+| 0.0 | 0.89 | 0.82 | 0.85 | 50,035 |
+| 1.0 | 0.32 | 0.47 | 0.38 | 9,148 |
+| accuracy |  |  | 0.76 | 59,183 |
+| macro avg | 0.61 | 0.64 | 0.62 | 59,183 |
+| weighted avg | 0.80 | 0.76 | 0.78 | 59,183 |
 
 The top 5 features of the highest feature importance are:
 * intrate: interest rate on the loan
