@@ -18,13 +18,21 @@ Since roughly only 25% of the loans are charged-off vs fully-paid, I explored tw
 In this project, I applied LightGBM and used Bayesian Optimization to tune hyperparameters
 
 ## Result
-* Weighted Avg. F1-score: 0.78 (Precision:0.82, Recall:0.65)
-* The top 5 features of the highest feature importance are:
-    * intrate: interest rate on the loan
-    * emptitle_chargeoff_pct: avg. historical charged-off rate per emptitle
-    * dti: debt-to-income ratio
-    * annualinc: annual income
-    * installment: the monthly payment owed by the borrower if the loan originates
+
+|  | precision | recall | f1-score | support |
+| ------ | ------ | ------ | ------ | ------ |
+| 0.0 | 0.89 | 0.82 | 0.85 | 50035 |
+| 1.0 | 0.32 | 0.47 | 0.38 | 9148 |
+| accuracy |  |  | 0.76 | 59183 |
+| macro avg | 0.61 | 0.64 | 0.62 | 59183 |
+| weighted avg | 0.80 | 0.76 | 0.78 | 59183 |
+
+The top 5 features of the highest feature importance are:
+* intrate: interest rate on the loan
+* emptitle_chargeoff_pct: avg. historical charged-off rate per emptitle
+* dti: debt-to-income ratio
+* annualinc: annual income
+* installment: the monthly payment owed by the borrower if the loan originates
 
 The two approach of handeling the imbalanced data render similar important features. 
 The second approach gives higher weighted avg. F1-score (0.78) than the first one (0.69).
