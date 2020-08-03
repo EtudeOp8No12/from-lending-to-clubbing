@@ -1,5 +1,5 @@
 # LendingClub Charged-off Loan Prediction
-This project aims to predicted whether a loan will be charged-off rates based on historical data from 2016-2019 obtained from LendingClub’s website and its API. 
+This project aims to predict whether a loan will be charged-off based on historical data from 2016-2019 obtained from LendingClub’s website and its API. 
 
 ## Data
   - Historical loan data: https://www.lendingclub.com/info/download-data.action
