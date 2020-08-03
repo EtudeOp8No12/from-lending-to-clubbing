@@ -27,6 +27,14 @@ def convert_categorical_numerical(df, feature_removeString):
         # if empty string after removing characters, fill with 0
         df.loc[df[feature] == '', feature] = 0
 
+def countinuous_variable_plot(df, feat_name, i, fs, column_name):
+    sns.set_style("whitegrid", {'axes.edgecolor': '0'})
+    factor = pd.qcut(df[feat_name], 5, labels = False, duplicates = 'drop') #groups the data act on groups                                                               #seperately
+    table = df.groupby([factor, column_name]).size() #gets group size counts, hashed by the two variables
+    table = table.unstack(column_name) #splits the data into 2 columns, 0, 1, each indexed by the
+    normedtable = table.div(table.sum(1), axis=0) #divides the counts by the totals
+    normedtable.iloc[:, 1].plot(kind = 'bar', alpha=0.9, color ="#86bf91",ax = axes[i//3, i%3],fontsize = fs)   
+
 def draw_PR(model, dtrain, dvalid, dtest, y_train, y_valid, y_test):
     probas_0 = model.predict(dtrain, ntree_limit=model.best_ntree_limit)
     probas_1 = model.predict(dvalid, ntree_limit=model.best_ntree_limit)
